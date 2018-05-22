@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('topic', 'TopicController@index');
+$router->post('topic', 'TopicController@storeTopic');
+$router->put('topic/update/{id}', 'TopicController@updateTopic');
+$router->delete('topic/delete/{id}', 'TopicController@deleteTopic');
