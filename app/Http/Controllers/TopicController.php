@@ -21,8 +21,8 @@ class TopicController extends Controller
         $input = $request->all();
         $input['created_at'] = Carbon::now();
         $input['updated_at'] = Carbon::now();
-        $cate = DB::table('topics')->insert($input);
-        if ($cate) {
+        $topic = DB::table('topics')->insert($input);
+        if ($topic) {
             $res['success'] = true;
             $res['message'] = 'Data saved';
       
@@ -39,17 +39,28 @@ class TopicController extends Controller
         $input = $request->all();
         $input['created_at'] = Carbon::now();
         $input['updated_at'] = Carbon::now();
-        $update = DB::table('topics')
+        $topic = DB::table('topics')
             ->where('id', $id)
             ->update($input);
-        $res = DB::table('topics')->where('id', '=', $id)->get();
+        $data = DB::table('topics')->where('id', '=', $id)->get();
       
-        return response($res);
+        if ($topic) {
+            $res['success'] = true;
+            $res['message'] = 'Data saved';
+            $res['data'] = $data;
+      
+            return response($res);
+        }else{
+            $res['success'] = false;
+            $res['message'] = 'Data cannot be saved!';
+        
+            return response($res);
+        }
     }
 
     public function deleteTopic(Request $request, $id){
-        $users = DB::table('topics')->where('id', $id)->delete();  
-        if ($users) {
+        $topic = DB::table('topics')->where('id', $id)->delete();  
+        if ($topic) {
             $res['success'] = true;
             $res['message'] = 'ID '.$id.' deleted';
       
