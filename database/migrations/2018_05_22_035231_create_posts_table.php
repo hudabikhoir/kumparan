@@ -17,7 +17,6 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('news_id');
             $table->unsignedInteger('topic_id');
-            $table->enum('status', ['draft', 'deleted', 'publish']);
             $table->timestamps();
 
             $table->foreign('news_id')->references('id')->on('news');
