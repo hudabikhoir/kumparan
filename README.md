@@ -7,14 +7,17 @@ This Repo Kumparan Backend candidate test.
 - clone git repository
 ``git clone https://github.com/hudabikhoir/kumparan.git``
 - setting .env 
-- migrate database 
+- migrate database
 ``php artisan migrate``
 - Seed database 
 ``php artisan db:seed``
 - test application with php unit run 
 ``vendor/bin/phpunit``
 
+## Documentation
+You can check our documentation on [wiki](http://opensource.org/licenses/MIT)
+
 
 ## License
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
