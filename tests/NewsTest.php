@@ -16,21 +16,21 @@ class NewsTest extends TestCase
 
     public function testCreateNews()
     {
-        $response = $this->call('POST', '/news', ['title' => 'title', 'content' => 'content', 'status' => 'draft', 'topic' => '1,2']);
+        $response = $this->call('POST', '/news', ['title' => 'title', 'content' => 'content', 'status' => 'draft', 'topic' => '2,1']);
 
         $this->assertEquals(200, $response->status());
     }
 
     public function testUpdateNews()
     {
-        $response = $this->call('PUT', '/news/update/1', ['title' => 'title', 'content' => 'content', 'status' => 'publish']);
+        $response = $this->call('PUT', '/news/update/2', ['title' => 'title', 'content' => 'content', 'status' => 'publish']);
 
         $this->assertEquals(200, $response->status());
     }
 
     public function testDeleteNews()
     {
-        $response = $this->call('DELETE', '/news/delete/1');
+        $response = $this->call('DELETE', '/news/delete/2');
 
         $this->assertEquals(200, $response->status());
     }
