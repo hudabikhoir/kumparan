@@ -7,8 +7,10 @@ This Repo Kumparan Backend candidate test.
 - clone git repository
 ``git clone https://github.com/hudabikhoir/kumparan.git``
 - setting .env 
-- migrate database 
+- migrate database
 ``php artisan migrate``
+- test application with php unit run 
+``phpunit`` 
 
 ## Documentation
 You can check our documentation on [wiki](http://opensource.org/licenses/MIT)
