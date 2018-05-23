@@ -23,14 +23,14 @@ class TopicTest extends TestCase
 
     public function testUpdateTopic()
     {
-        $response = $this->call('PUT', '/topic/update/1', ['name' => 'teknologi']);
+        $response = $this->call('PUT', '/topic/update/2', ['name' => 'teknologi']);
 
         $this->assertEquals(200, $response->status());
     }
 
     public function testDeleteTopic()
     {
-        $response = $this->call('DELETE', '/topic/delete/1');
+        $response = $this->call('DELETE', '/topic/delete/3');
 
         $this->assertEquals(200, $response->status());
     }
