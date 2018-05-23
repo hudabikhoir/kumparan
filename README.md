@@ -9,6 +9,11 @@ This Repo Kumparan Backend candidate test.
 - setting .env 
 - migrate database 
 ``php artisan migrate``
+- Seed database 
+``php artisan db:seed``
+- test application with php unit run 
+``vendor/bin/phpunit``
+
 
 ## License
 
