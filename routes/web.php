@@ -14,6 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('/key', function() {
+    return str_random(32);
+});
 $router->get('topic', 'TopicController@index');
 $router->post('topic', 'TopicController@storeTopic');
 $router->put('topic/update/{id}', 'TopicController@updateTopic');
